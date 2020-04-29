@@ -3,6 +3,6 @@ export default{
         host:'localhost',
         user: 'root',
         password:'',
-        database:'db_games'
+        database:'db_medical_center'
     }
 }
