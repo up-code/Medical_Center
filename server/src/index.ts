@@ -5,6 +5,8 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import gameRoutes from './routes/gameRutes';
 import tipoPaciente from './routes/tipoPacienteRutes';
+import usuario from './routes/usuarioRutes';
+import especialidad from './routes/especialidadRutes';
 
 class Server{
   public app : Application;
@@ -26,6 +28,8 @@ class Server{
        this.app.use(indexRoutes);
        this.app.use('/api/games', gameRoutes);
        this.app.use('/api/tipoPaciente', tipoPaciente);
+       this.app.use('/api/usuario', usuario);
+       this.app.use('/api/especialidad',especialidad );
     }
 
     start(): void{
