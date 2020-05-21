@@ -15,7 +15,7 @@ class EspecialidadController{
          if(result.length > 0){
             return res.json(result[0]);
         }
-        res.status(404).json({text: 'User dont finder'})
+        res.status(404).json({text: 'User don`t finder'})
     }
 //create new user
     public async create(req: Request, res: Response): Promise<void>{
