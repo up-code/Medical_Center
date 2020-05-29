@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 
-import { Paciente } from '../models/Paceinte'; 
-import { Observable } from 'rxjs';
+import { Paciente } from '../models/Paciente'; 
+
 
 
 @Injectable({
@@ -15,23 +15,23 @@ export class PacienteService {
   API_URi = 'http://localhost:3000/api';
   //zona donde interactua la interfaz con la API REST
 
-    getGames(){
+    getPacientes(){
       return this.http.get('http://localhost:3000/api/paciente');
     }
 
-    getGame(id: string){
+    getPaciente(id: string){
       return this.http.get('http://localhost:3000/api/paciente/'+id);
     }
    
-   saveGame(paciente: Paciente){
+   savePaciente(paciente: Paciente){
      return this.http.post('http://localhost:3000/api/paciente', paciente);
    }
 
-   deleteGame(id: string){
+   deletePaciente(id: string){
      return this.http.delete('http://localhost:3000/api/paciente/'+id);
    }
 
-   updateGame(id: string | number, paciente: Paciente){
+   updatePaciente(id: string | number, paciente: Paciente){
      return this.http.put('http://localhost:3000/api/paciente/'+id, paciente);
    }
 
