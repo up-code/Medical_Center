@@ -13,46 +13,46 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class EspecialidadController {
-    //list the user
+class PacienteController {
+    //list the paciente
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const tipo = yield database_1.default.query('SELECT * FROM especialidad');
+            const tipo = yield database_1.default.query('SELECT * FROM paciente');
             res.json(tipo);
         });
     }
-    //get user for id
+    //get paciente for id
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield database_1.default.query('SELECT * FROM especialidad WHERE id_especialidad = ?', [req.params.id]);
+            const result = yield database_1.default.query('SELECT * FROM paciente WHERE id_paciente = ?', [req.params.id]);
             if (result.length > 0) {
                 return res.json(result[0]);
             }
-            res.status(404).json({ text: 'User don`t finder' });
+            res.status(404).json({ text: 'Paciente don`t finder' });
         });
     }
-    //create new user
+    //create new Paciente
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO especialidad set ?', [req.body]);
-            res.json({ message: 'User is Created!!!' });
+            yield database_1.default.query('INSERT INTO paciente set ?', [req.body]);
+            res.json({ message: 'Paciente is Created!!!' });
         });
     }
-    // delete user by id
+    // delete Paciente by id
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('DELETE FROM especialidad WHERE id_especialidad = ?', [id]);
-            res.json({ message: 'The user is Deleted' });
+            yield database_1.default.query('DELETE FROM paciente WHERE id_paciente = ?', [id]);
+            res.json({ message: 'The Paciente is Deleted' });
         });
     }
-    //update user by id
+    //update Paciente by id
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            yield database_1.default.query('UPDATE especialidad set ? WHERE id_especialidad = ?', [req.body, id]);
-            res.json({ message: 'The user in Updated' });
+            yield database_1.default.query('UPDATE PAciente set ? WHERE id_paciente = ?', [req.body, id]);
+            res.json({ message: 'The Paciente in Updated' });
         });
     }
 }
-exports.especialidadController = new EspecialidadController();
+exports.pacienteController = new PacienteController();

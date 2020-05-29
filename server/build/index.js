@@ -10,6 +10,7 @@ const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const tipoPacienteRutes_1 = __importDefault(require("./routes/tipoPacienteRutes"));
 const usuarioRutes_1 = __importDefault(require("./routes/usuarioRutes"));
 const especialidadRutes_1 = __importDefault(require("./routes/especialidadRutes"));
+const pacienteRuetes_1 = __importDefault(require("./routes/pacienteRuetes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -28,6 +29,7 @@ class Server {
         this.app.use('/api/tipoPaciente', tipoPacienteRutes_1.default);
         this.app.use('/api/usuario', usuarioRutes_1.default);
         this.app.use('/api/especialidad', especialidadRutes_1.default);
+        this.app.use('/api/paciente', pacienteRuetes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
