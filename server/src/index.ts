@@ -7,6 +7,7 @@ import tipoPaciente from './routes/tipoPacienteRutes';
 import usuario from './routes/usuarioRutes';
 import especialidad from './routes/especialidadRutes';
 import paciente from './routes/pacienteRuetes';
+import tipoUsuario from './routes/tipoUsuarioRutes';
 
 class Server{
   public app : Application;
@@ -30,6 +31,7 @@ class Server{
        this.app.use('/api/usuario', usuario);
        this.app.use('/api/especialidad',especialidad );
        this.app.use('/api/paciente', paciente);
+       this.app.use('/api/tipoUsuario', tipoUsuario);
     }
 
     start(): void{

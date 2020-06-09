@@ -1,0 +1,20 @@
+<div class="text-center mt-5">
+  <h2>Lista de Especialidades</h2>
+</div>
+
+<div class="row mt-5">
+  <div class="col-md-4"></div> 
+<div class="row" *ngFor="let esp of especialidades">
+    
+    <div class="col-md-4 text-center">
+      <ul>
+        <li>
+          <h5><i class="fas fa-stethoscope"></i> {{esp.especialidad}}</h5>
+        </li>
+      </ul>
+      
+    </div> 
+   
+</div>
+<div class="col-md-4"></div>
+</div>
