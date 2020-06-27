@@ -5,8 +5,8 @@ import  pool  from '../database';
 class PacienteController{
 //list the paciente
    public async list(req: Request ,res:Response){
-      const tipo = await pool.query('SELECT * FROM paciente');
-      res.json(tipo);
+      const pacientes = await pool.query('SELECT * FROM paciente');
+      res.json(pacientes);
         
     }
 //get paciente for id
@@ -20,7 +20,7 @@ class PacienteController{
 //create new Paciente
     public async create(req: Request, res: Response): Promise<void>{
      await pool.query('INSERT INTO paciente set ?', [req.body]);
-     res.json({message: 'Paciente is Created!!!'});
+     res.status(200).json({message: 'Paciente is Created!!!'});
     }
 // delete Paciente by id
     public async delete(req:Request, res: Response): Promise<void>{

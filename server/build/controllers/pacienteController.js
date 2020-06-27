@@ -17,8 +17,8 @@ class PacienteController {
     //list the paciente
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const tipo = yield database_1.default.query('SELECT * FROM paciente');
-            res.json(tipo);
+            const pacientes = yield database_1.default.query('SELECT * FROM paciente');
+            res.json(pacientes);
         });
     }
     //get paciente for id
@@ -35,7 +35,7 @@ class PacienteController {
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             yield database_1.default.query('INSERT INTO paciente set ?', [req.body]);
-            res.json({ message: 'Paciente is Created!!!' });
+            res.status(200).json({ message: 'Paciente is Created!!!' });
         });
     }
     // delete Paciente by id

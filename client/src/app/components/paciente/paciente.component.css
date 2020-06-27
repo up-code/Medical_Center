@@ -1,0 +1,13 @@
+th{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+td{
+    color: black;
+
+}
+thead{
+    background-color:silver;
+}
